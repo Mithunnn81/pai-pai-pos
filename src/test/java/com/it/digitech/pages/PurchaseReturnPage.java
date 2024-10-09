@@ -18,7 +18,6 @@ public class PurchaseReturnPage extends CommonMethods {
         PageFactory.initElements(PageDriver.getCurrentDriver(), this);
         this.test = test;
     }
-    public PurchaseReturnPage(){};
     
     @FindBy(xpath = "//header/nav[1]/div[3]/ul[1]/li[4]/ul[1]/li[2]/a[1]")
     private WebElement purchaseReturnButton;
@@ -34,9 +33,6 @@ public class PurchaseReturnPage extends CommonMethods {
 		  
 	@FindBy(xpath = "//a[contains(text(),'Fetch')]")
 	public WebElement fetchGrn;
-	
-    @FindBy(xpath = "//select[@id='issuingStore']")
-    private WebElement warehouse;
 
     // Helper method to click and capture screenshots
     private void clickAndCapture(WebElement element, String elementName) throws IOException {

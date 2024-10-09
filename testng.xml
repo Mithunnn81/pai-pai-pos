@@ -4,10 +4,14 @@
  <test name="Test">
      <classes>
 		     <class name="com.it.digitech.tests.LoginTest"/>
-		  	 <class name="com.it.digitech.tests.PurchaseReturnTest"/>
-		   	 <class name="com.it.digitech.tests.PurchaseGrnCorpListTest"/>
+		  	 <!--
+				<class name="com.it.digitech.tests.CreateItemTest"/>
+		     <class name="com.it.digitech.tests.PurchaseGrnCorpListTest"/>
+		   	 <class name="com.it.digitech.tests.PurchaseReturnTest"/>
+		   	  -->
+		   	  <class name="com.it.digitech.tests.RetailSalesWithoutBarTest"/>
      </classes>
  </test>
 </suite>
 
- 	<!-- -->
+ 	

@@ -2,6 +2,7 @@ package com.it.digitech.utilities;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindAll;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -10,15 +11,33 @@ import com.it.digitech.drivers.PageDriver;
 
 public class CommonMethods extends BaseDriver {
 
+	@FindBy(xpath = "//a[@id='navbarDropdown_BAS']")
+    public WebElement base;
+	
+    @FindBy(xpath = "//a[@id='navbarDropdown_SAL']")
+    public WebElement sales;
 	
 	@FindBy(xpath = "//a[@id='navbarDropdown_PUR']")
     public WebElement purchase;
 	
-	@FindBy(xpath = "//input[@id='operatingUnit']") 
+    @FindBy(xpath = "//button[contains(text(),'New')]")
+    public WebElement newForm;
+	
+	@FindAll({
+		@FindBy(xpath = "//input[@id='operatingUnit']"),
+		@FindBy(xpath = "//select[@id='operatingUnit']")	
+	})
     public WebElement operatingUnit;
 	
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[5]/fieldset[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]")
     public WebElement selectOperatingUnit;
+	
+	@FindAll({
+		@FindBy(xpath = "//select[@id='issuingStore']"),
+		@FindBy(xpath = "//select[@id='receivingStore']")	
+	})
+    public WebElement warehouse;
+    
 	
 	public static void timeout() throws InterruptedException {
 		Thread.sleep(2000);

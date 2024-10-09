@@ -43,9 +43,6 @@ public class PurchaseGrnCorpListPage extends CommonMethods {
     @FindBy(xpath = "//input[@id='receivedQuantity']")
     private WebElement quantity;
     
-    @FindBy(xpath = "//select[@id='receivingStore']")
-    private WebElement warehouse;
-    
     @FindBy(xpath = "//body/div[@id='_windowWrapper']/main[@id='main']/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[8]/div[3]/div[1]/button[1]")
     public WebElement saveDown;
     
