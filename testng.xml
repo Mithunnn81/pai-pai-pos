@@ -3,13 +3,17 @@
 <suite name="Pai Pai POS">
  <test name="Test">
      <classes>
-		     <class name="com.it.digitech.tests.LoginTest"/>
-		  	 <!--
-				<class name="com.it.digitech.tests.CreateItemTest"/>
-		     <class name="com.it.digitech.tests.PurchaseGrnCorpListTest"/>
-		   	 <class name="com.it.digitech.tests.PurchaseReturnTest"/>
-		   	  -->
-		   	  <class name="com.it.digitech.tests.RetailSalesWithoutBarTest"/>
+		    <class name="com.it.digitech.tests.LoginTest"/>
+		     
+		  	<!-- 
+			<class name="com.it.digitech.tests.CreateItemTest"/>
+		    <class name="com.it.digitech.tests.PurchaseGrnCorpListTest"/>
+		   	<class name="com.it.digitech.tests.PurchaseReturnTest"/>  
+		   	<class name="com.it.digitech.tests.RetailSalesWithoutBarTest"/> 
+		   	<class name="com.it.digitech.tests.PartySaleWithoutBarTest"/> -->
+		   	<class name="com.it.digitech.tests.HireSaleWithoutBarTest"/>
+			 
+			 
      </classes>
  </test>
 </suite>

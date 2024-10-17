@@ -61,7 +61,7 @@ public class RetailSalesWithoutBarPage extends CommonMethods{
 	        clickAndCapture(saleWithoutBar, "saleWithoutBar");
 	        clickAndCapture(retailSaleWob, "retailSaleWob");
 	        clickAndCapture(operatingUnit, "operatingUnit");
-//	        clickAndCapture(selectOperatingUnit, "selectOperatingUnit");
+
 	        try {
 	            if (operatingUnit.isDisplayed()) {
 	                new Select(operatingUnit).selectByIndex(1);
@@ -76,7 +76,7 @@ public class RetailSalesWithoutBarPage extends CommonMethods{
 	        
 	        try {
 	            if (warehouse.isDisplayed()) {
-	                new Select(warehouse).selectByIndex(2);
+	                new Select(warehouse).selectByIndex(1);
 	                timeout();
 	                capturePass(test, "warehouse");
 	            }
@@ -88,18 +88,55 @@ public class RetailSalesWithoutBarPage extends CommonMethods{
 	        
 	        try {
 	            if (customerName.isDisplayed()) {
-	            	customerName.sendKeys("Rtl");
-	            	Actions action = new Actions(PageDriver.getCurrentDriver());
-	            	action.keyDown(Keys.ARROW_DOWN);
-	            	action.keyDown(Keys.ENTER);
+	                customerName.sendKeys("Rtl");
+	                customerName.click();
 	                timeout();
+
+	                Actions action = new Actions(PageDriver.getCurrentDriver());
+	                action.sendKeys(Keys.ENTER).perform();
+	                
+	                timeout();
+
 	                capturePass(test, "customerName");
 	            }
 	        } catch (Exception e) {
-	        	captureFail(test, "customerName");
+	            captureFail(test, "customerName");
 	            Assert.assertTrue(customerName.isDisplayed());
 	            PageDriver.getCurrentDriver().quit();
 	        }
+
 	        
+	        try {
+	            if (itemNameEnter.isDisplayed()) {
+	                itemNameEnter.sendKeys("item");
+	                timeout();
+
+	                Actions action = new Actions(PageDriver.getCurrentDriver());
+	                action.moveToElement(itemNameEnter).perform();
+	                action.sendKeys(Keys.ARROW_DOWN).perform();
+	                action.sendKeys(Keys.ENTER).perform();
+	                timeout();
+
+	                capturePass(test, "itemNameEnter");
+	            }
+	        } catch (Exception e) {
+	            captureFail(test, "itemNameEnter");
+	            Assert.assertTrue(itemNameEnter.isDisplayed());
+	            PageDriver.getCurrentDriver().quit();
+	        }
+
+	        try {
+	            if (itemQty.isDisplayed()) {
+	            	itemQty.clear();
+	            	
+	            	itemQty.sendKeys("2");
+	                timeout();
+	                capturePass(test, "itemQty");
+	            }
+	        } catch (Exception e) {
+	        	captureFail(test, "itemQty");
+	            Assert.assertTrue(itemQty.isDisplayed());
+	            PageDriver.getCurrentDriver().quit();
+	        }
 	    }
 }

@@ -29,8 +29,11 @@ public class CommonMethods extends BaseDriver {
 	})
     public WebElement operatingUnit;
 	
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[5]/fieldset[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]")
-    public WebElement selectOperatingUnit;
+	@FindAll({
+		@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[5]/fieldset[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]"),
+		@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[5]/fieldset[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]")
+	})
+	public WebElement selectOperatingUnit;
 	
 	@FindAll({
 		@FindBy(xpath = "//select[@id='issuingStore']"),

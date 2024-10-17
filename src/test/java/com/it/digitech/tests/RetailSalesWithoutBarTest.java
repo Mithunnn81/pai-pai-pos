@@ -24,12 +24,12 @@ public class RetailSalesWithoutBarTest extends CommonMethods{
 		PageDriver.getCurrentDriver().get(url);
 		timeout();
 		report = ExtentFactory.getInstance();
-		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>Purchase Return Module</b></p>").assignAuthor("Mithun").assignDevice("Windows");
+		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>Retail Sale Without Barcode</b></p>").assignAuthor("Mithun").assignDevice("Windows");
 	}
 	
 	@Test
 	public void testRetailSaleWoBarMethod() throws IOException {
-		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>Check for a successfull purchase return</b></p>");
+		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>Check for a successfull Retail sale</b></p>");
 		RetailSalesWithoutBarPage retailSalesWithoutBarPage = new RetailSalesWithoutBarPage(childTest);
 		retailSalesWithoutBarPage.RetailSalesWithoutBar();
 	}
