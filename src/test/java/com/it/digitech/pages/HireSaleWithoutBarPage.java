@@ -68,12 +68,33 @@ public class HireSaleWithoutBarPage extends CommonMethods{
 	            PageDriver.getCurrentDriver().quit();
 	        }
 		}
+    
+    public void typeAndCapture(WebElement element, String elementName, String key) throws IOException {
+    	
+		try {
+			 if (element.isDisplayed()) {
+				 
+	                element.sendKeys(key);
+	                timeout();
+	                capturePass(test, elementName);
+	            }
+	        } catch (Exception e) {
+	        	System.out.println(e.getMessage());
+	        	captureFail(test, elementName);
+	            Assert.assertTrue(element.isDisplayed());
+	            PageDriver.getCurrentDriver().quit();
+	        }
+    	
+    }
+    
     public void HireSaleWithoutBar() throws IOException {
         clickAndCapture(sales, "sales");
         clickAndCapture(saleWithoutBar, "saleWithoutBar");
         clickAndCapture(hireSaleWob, "hireSaleWob");
         clickAndCapture(operatingUnit, "operatingUnit");
         clickAndCapture(selectOperatingUnit, "selectOperatingUnit");
+        
+       
         
         try {
             if (warehouse.isDisplayed()) {
@@ -118,17 +139,19 @@ public class HireSaleWithoutBarPage extends CommonMethods{
             PageDriver.getCurrentDriver().quit();
         }
         
-        try {
-            if (reffererNumber.isDisplayed()) {          	
-            	reffererNumber.sendKeys("88776test");
-                timeout();
-                capturePass(test, "reffererNumber");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "reffererNumber");
-            Assert.assertTrue(reffererNumber.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
+//        try {
+//            if (reffererNumber.isDisplayed()) {          	
+//            	reffererNumber.sendKeys("88776test");
+//                timeout();
+//                capturePass(test, "reffererNumber");
+//            }
+//        } catch (Exception e) {
+//        	captureFail(test, "reffererNumber");
+//            Assert.assertTrue(reffererNumber.isDisplayed());
+//            PageDriver.getCurrentDriver().quit();
+//        }
+        
+        typeAndCapture(reffererNumber, "reffererNumber", "88776test");
         
         try {
             if (itemName.isDisplayed()) {
@@ -167,7 +190,7 @@ public class HireSaleWithoutBarPage extends CommonMethods{
         
         try {
             if (paidAmount.isDisplayed()) {
-            	paidAmount.sendKeys("3");
+            	paidAmount.sendKeys("300");
                 timeout();
                 capturePass(test, "paidAmount");
             }

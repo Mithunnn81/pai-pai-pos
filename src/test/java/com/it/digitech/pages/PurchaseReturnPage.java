@@ -33,6 +33,10 @@ public class PurchaseReturnPage extends CommonMethods {
 		  
 	@FindBy(xpath = "//a[contains(text(),'Fetch')]")
 	public WebElement fetchGrn;
+	
+	@FindBy(xpath = "//a[contains(text(),'PRTN-00001')]")
+	public WebElement matchCreation;
+
 
     // Helper method to click and capture screenshots
     private void clickAndCapture(WebElement element, String elementName) throws IOException {
@@ -70,7 +74,22 @@ public class PurchaseReturnPage extends CommonMethods {
         clickAndCapture(selectOperatingUnit, "selectOperatingUnit");
         clickAndCapture(clickGrn, "clickGrn");
         clickAndCapture(selectGrn, "selectGrn");
-        clickAndCapture(fetchGrn, "fetchGrn");
+        //clickAndCapture(fetchGrn, "fetchGrn");
+        
+        PageDriver.getCurrentDriver().navigate().back();
+        
+        try {
+            if (matchCreation.isDisplayed()) {
+                System.out.println("successfully created");
+                timeout();
+                capturePass(test, "matchCreation");
+            }
+        } catch (Exception e) {
+        	captureFail(test, "matchCreation");
+        	System.out.println("Not created, Try again");
+            Assert.assertTrue(matchCreation.isDisplayed());
+            PageDriver.getCurrentDriver().quit();
+        }
 
     }
 }

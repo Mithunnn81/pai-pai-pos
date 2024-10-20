@@ -20,6 +20,9 @@ public class CommonMethods extends BaseDriver {
 	@FindBy(xpath = "//a[@id='navbarDropdown_PUR']")
     public WebElement purchase;
 	
+	@FindBy(xpath = "//a[@id='navbarDropdown_ACC']")
+    public WebElement accounts;
+	
     @FindBy(xpath = "//button[contains(text(),'New')]")
     public WebElement newForm;
 	
@@ -40,6 +43,9 @@ public class CommonMethods extends BaseDriver {
 		@FindBy(xpath = "//select[@id='receivingStore']")	
 	})
     public WebElement warehouse;
+	
+		@FindBy(xpath = "//button[contains(text(),'New')]")	
+    public WebElement newButton;
     
 	
 	public static void timeout() throws InterruptedException {
@@ -72,4 +78,5 @@ public class CommonMethods extends BaseDriver {
 			System.out.println(e.getMessage());
 		}
 	}
+	
 }

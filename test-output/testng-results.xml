@@ -2,46 +2,46 @@
 <testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-17T11:05:58Z" name="Pai Pai POS" finished-at="2024-10-17T11:06:46Z" duration-ms="47543">
+  <suite started-at="2024-10-20T11:42:20Z" name="Pai Pai POS" finished-at="2024-10-20T11:42:56Z" duration-ms="35566">
     <groups>
     </groups>
-    <test started-at="2024-10-17T11:05:58Z" name="Test" finished-at="2024-10-17T11:06:46Z" duration-ms="47543">
+    <test started-at="2024-10-20T11:42:20Z" name="Test" finished-at="2024-10-20T11:42:56Z" duration-ms="35566">
       <class name="com.it.digitech.tests.LoginTest">
-        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.it.digitech.tests.LoginTest@6c779568]" started-at="2024-10-17T17:05:56Z" name="startBrowser" finished-at="2024-10-17T17:05:58Z" duration-ms="1856" status="PASS">
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.it.digitech.tests.LoginTest@6c779568]" started-at="2024-10-20T17:42:19Z" name="startBrowser" finished-at="2024-10-20T17:42:20Z" duration-ms="1243" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startBrowser -->
-        <test-method is-config="true" signature="openUrl()[pri:0, instance:com.it.digitech.tests.LoginTest@6c779568]" started-at="2024-10-17T17:05:58Z" name="openUrl" finished-at="2024-10-17T17:06:00Z" duration-ms="2391" status="PASS">
+        <test-method is-config="true" signature="openUrl()[pri:0, instance:com.it.digitech.tests.LoginTest@6c779568]" started-at="2024-10-20T17:42:20Z" name="openUrl" finished-at="2024-10-20T17:42:23Z" duration-ms="2310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUrl -->
-        <test-method signature="testLoginMethod()[pri:0, instance:com.it.digitech.tests.LoginTest@6c779568]" started-at="2024-10-17T17:06:00Z" name="testLoginMethod" finished-at="2024-10-17T17:06:08Z" duration-ms="7754" status="PASS">
+        <test-method signature="testLoginMethod()[pri:0, instance:com.it.digitech.tests.LoginTest@6c779568]" started-at="2024-10-20T17:42:23Z" name="testLoginMethod" finished-at="2024-10-20T17:42:32Z" duration-ms="8841" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginMethod -->
-        <test-method is-config="true" signature="report()[pri:0, instance:com.it.digitech.tests.LoginTest@6c779568]" started-at="2024-10-17T17:06:08Z" name="report" finished-at="2024-10-17T17:06:08Z" duration-ms="248" status="PASS">
+        <test-method is-config="true" signature="report()[pri:0, instance:com.it.digitech.tests.LoginTest@6c779568]" started-at="2024-10-20T17:42:32Z" name="report" finished-at="2024-10-20T17:42:32Z" duration-ms="234" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- report -->
-        <test-method is-config="true" signature="close()[pri:0, instance:com.it.digitech.tests.LoginTest@6c779568]" started-at="2024-10-17T17:06:46Z" name="close" finished-at="2024-10-17T17:06:46Z" duration-ms="204" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:com.it.digitech.tests.LoginTest@6c779568]" started-at="2024-10-20T17:42:56Z" name="close" finished-at="2024-10-20T17:42:56Z" duration-ms="203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
       </class> <!-- com.it.digitech.tests.LoginTest -->
-      <class name="com.it.digitech.tests.HireSaleWithoutBarTest">
-        <test-method is-config="true" signature="openUrl()[pri:0, instance:com.it.digitech.tests.HireSaleWithoutBarTest@f381794]" started-at="2024-10-17T17:06:08Z" name="openUrl" finished-at="2024-10-17T17:06:11Z" duration-ms="2160" status="PASS">
+      <class name="com.it.digitech.tests.SupplierPaymentTest">
+        <test-method is-config="true" signature="openUrl()[pri:0, instance:com.it.digitech.tests.SupplierPaymentTest@f381794]" started-at="2024-10-20T17:42:32Z" name="openUrl" finished-at="2024-10-20T17:42:34Z" duration-ms="2183" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUrl -->
-        <test-method signature="testHireSaleWoBarMethod()[pri:0, instance:com.it.digitech.tests.HireSaleWithoutBarTest@f381794]" started-at="2024-10-17T17:06:11Z" name="testHireSaleWoBarMethod" finished-at="2024-10-17T17:06:46Z" duration-ms="34911" status="PASS">
+        <test-method signature="testSupplierPaymentMethod()[pri:0, instance:com.it.digitech.tests.SupplierPaymentTest@f381794]" started-at="2024-10-20T17:42:34Z" name="testSupplierPaymentMethod" finished-at="2024-10-20T17:42:56Z" duration-ms="21911" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testHireSaleWoBarMethod -->
-        <test-method is-config="true" signature="report()[pri:0, instance:com.it.digitech.tests.HireSaleWithoutBarTest@f381794]" started-at="2024-10-17T17:06:46Z" name="report" finished-at="2024-10-17T17:06:46Z" duration-ms="63" status="PASS">
+        </test-method> <!-- testSupplierPaymentMethod -->
+        <test-method is-config="true" signature="report()[pri:0, instance:com.it.digitech.tests.SupplierPaymentTest@f381794]" started-at="2024-10-20T17:42:56Z" name="report" finished-at="2024-10-20T17:42:56Z" duration-ms="69" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- report -->
-      </class> <!-- com.it.digitech.tests.HireSaleWithoutBarTest -->
+      </class> <!-- com.it.digitech.tests.SupplierPaymentTest -->
     </test> <!-- Test -->
   </suite> <!-- Pai Pai POS -->
 </testng-results>
