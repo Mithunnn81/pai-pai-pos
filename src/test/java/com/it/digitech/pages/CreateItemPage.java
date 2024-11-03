@@ -82,9 +82,6 @@ public class CreateItemPage extends CommonMethods{
 	@FindBy (xpath= "//body[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[5]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/form[1]/div[9]/fieldset[1]/div[11]/div[1]/input[1]")
 	private WebElement salesPrice;
 	
-	@FindBy (xpath= "fake//body[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[5]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/form[1]/div[16]/button[1]")
-	private WebElement save;
-	
 	private void clickAndCapture(WebElement element, String elementName) throws IOException {
 		  
         try {
@@ -192,7 +189,7 @@ public class CreateItemPage extends CommonMethods{
             PageDriver.getCurrentDriver().quit();
         }
         
-        clickAndCapture(save, "save");
+        clickAndCapture(saveButton, "saveButton");
 	}
 	
 	

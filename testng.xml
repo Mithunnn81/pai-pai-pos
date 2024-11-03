@@ -4,20 +4,28 @@
  <test name="Test">
      <classes>
 		    <class name="com.it.digitech.tests.LoginTest"/>  
-		    
+		    <class name="com.it.digitech.tests.JournalVoucharTest"/>
 		     
-		    <!--
-				
-		  	<class name="com.it.digitech.tests.PurchaseReturnTest"/>   
+   <!--   
 			<class name="com.it.digitech.tests.CreateItemTest"/>
-		    <class name="com.it.digitech.tests.PurchaseGrnCorpListTest"/>
-		   	<class name="com.it.digitech.tests.PurchaseReturnTest"/>  
-		   	<class name="com.it.digitech.tests.RetailSalesWithoutBarTest"/> 
+			<class name="com.it.digitech.tests.PurchaseGrnCorpListTest"/>
+						
+			<class name="com.it.digitech.tests.RetailSaleTest"/> 
+			<class name="com.it.digitech.tests.PartySaleTest"/>	
+			<class name="com.it.digitech.tests.HireSaleTest"/>
+			
+			<class name="com.it.digitech.tests.RetailSalesWithoutBarTest"/> 
 		   	<class name="com.it.digitech.tests.PartySaleWithoutBarTest"/> 
 		   	<class name="com.it.digitech.tests.HireSaleWithoutBarTest"/>
+			
+		  	<class name="com.it.digitech.tests.PurchaseReturnTest"/> 	    		   	
 			<class name="com.it.digitech.tests.SalesReturnTest"/> 
-			<class name="com.it.digitech.tests.SupplierPaymentTest"/>
-			 --> 
+			
+			<class name="com.it.digitech.tests.SupplierPaymentTest"/>  
+					
+	        --> 
+			
+			 
      </classes>
  </test>
 </suite>

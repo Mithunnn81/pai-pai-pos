@@ -3,15 +3,15 @@
 <suite name="Failed suite [Pai Pai POS]" guice-stage="DEVELOPMENT">
   <test name="Test(failed)">
     <classes>
-      <class name="com.it.digitech.tests.SupplierPaymentTest">
+      <class name="com.it.digitech.tests.JournalVoucharTest">
         <methods>
           <include name="startBrowser"/>
+          <include name="testJournalVouchar"/>
           <include name="report"/>
-          <include name="openUrl"/>
           <include name="close"/>
-          <include name="testSupplierPaymentMethod"/>
+          <include name="openUrl"/>
         </methods>
-      </class> <!-- com.it.digitech.tests.SupplierPaymentTest -->
+      </class> <!-- com.it.digitech.tests.JournalVoucharTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Pai Pai POS] -->

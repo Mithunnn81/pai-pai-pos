@@ -38,9 +38,6 @@ public class RetailSalesWithoutBarPage extends CommonMethods{
 	    @FindBy(xpath = "//tbody/tr[1]/td[6]/div[1]/input[1]")
 	    private WebElement itemQty;
 	    
-	    @FindBy(xpath = "//button[@id=' BTN_SAVE_DOCUMENT ']")
-	    private WebElement saveRtlWOBar;
-	    
 	    public void clickAndCapture(WebElement element, String elementName) throws IOException {
 			
 			try {
@@ -138,5 +135,7 @@ public class RetailSalesWithoutBarPage extends CommonMethods{
 	            Assert.assertTrue(itemQty.isDisplayed());
 	            PageDriver.getCurrentDriver().quit();
 	        }
+	        
+	        clickAndCapture(saveButton, "saveButton");
 	    }
 }

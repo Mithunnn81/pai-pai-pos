@@ -40,9 +40,6 @@ public class PartySaleWithoutBarPage extends CommonMethods{
     @FindBy(xpath = "//input[@id='orderCashQuantity']")
     private WebElement cashRcv;
     
-    @FindBy(xpath = "//button[@id=' BTN_SAVE_DOCUMENT ']")
-    private WebElement saveRtlWOBar;
-    
     public void clickAndCapture(WebElement element, String elementName) throws IOException {
 		
 		try {
@@ -154,6 +151,8 @@ public class PartySaleWithoutBarPage extends CommonMethods{
             Assert.assertTrue(cashRcv.isDisplayed());
             PageDriver.getCurrentDriver().quit();
         }
+        
+        clickAndCapture(saveButton, "saveButton");
     }
 }
 

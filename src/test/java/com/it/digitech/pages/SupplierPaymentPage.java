@@ -38,9 +38,6 @@ public class SupplierPaymentPage extends CommonMethods{
     @FindBy(xpath = "//input[@id='paymentAmount']")
     private WebElement amount;
     
-    @FindBy(xpath = "//body/div[@id='_windowWrapper']/main[@id='main']/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[8]/div[2]/div[1]/button[1]")
-    private WebElement saveButton;
-    
 public void clickAndCapture(WebElement element, String elementName) throws IOException {
 		
 		try {
@@ -86,7 +83,10 @@ public void clickAndCapture(WebElement element, String elementName) throws IOExc
         clickAndCapture(selectSupplier, "selectSupplier");
         clickAndCapture(paymentMethod, "paymentMethod");
         clickAndCapture(cash, "cash");
+        
         typeAndCapture(amount, "amount","1000");
+        
+        clickAndCapture(saveButton, "saveButton");
     }
 
 }

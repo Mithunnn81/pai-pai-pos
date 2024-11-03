@@ -74,7 +74,8 @@ public class PurchaseReturnPage extends CommonMethods {
         clickAndCapture(selectOperatingUnit, "selectOperatingUnit");
         clickAndCapture(clickGrn, "clickGrn");
         clickAndCapture(selectGrn, "selectGrn");
-        //clickAndCapture(fetchGrn, "fetchGrn");
+        clickAndCapture(fetchGrn, "fetchGrn");
+        clickAndCapture(saveButton, "saveButton");
         
         PageDriver.getCurrentDriver().navigate().back();
         
@@ -90,7 +91,8 @@ public class PurchaseReturnPage extends CommonMethods {
             Assert.assertTrue(matchCreation.isDisplayed());
             PageDriver.getCurrentDriver().quit();
         }
-
+        
+        
     }
 }
 

@@ -46,10 +46,25 @@ public class CommonMethods extends BaseDriver {
 	
 		@FindBy(xpath = "//button[contains(text(),'New')]")	
     public WebElement newButton;
+		
+		@FindBy(xpath = "//a[@id='dropdownMenu2_VOC']")	
+	public WebElement voucharPayment;
+		
+		@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[7]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]/div[1]")	
+	public WebElement accountsHeadJournalVouchar;
+		
+	@FindAll({	
+		@FindBy(xpath = "//button[@id=' BTN_SAVE_DOCUMENT ']"),
+		@FindBy(xpath = "//body/div[@id='_windowWrapper']/main[@id='main']/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[8]/div[3]/div[1]/button[1]"),		
+	})
+	public WebElement saveButton;
+	
+	@FindBy(xpath = "//button[@id=' BTN_CONFIRM ']")	
+	public WebElement confirmButton;
     
 	
 	public static void timeout() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 	}
 
 	public static void timeout(int time) throws InterruptedException {

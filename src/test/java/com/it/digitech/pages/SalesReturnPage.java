@@ -54,6 +54,7 @@ public class SalesReturnPage extends CommonMethods{
         clickAndCapture(clickInvoiceNo, "clickInvoiceNo");
         clickAndCapture(selectinvoice, "selectinvoice");
         clickAndCapture(fetchInvoice, "fetchInvoice");
+        clickAndCapture(saveButton, "saveButton");
 
     }
 }

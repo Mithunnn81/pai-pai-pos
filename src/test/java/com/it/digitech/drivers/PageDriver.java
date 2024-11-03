@@ -28,4 +28,9 @@ public class PageDriver {
 	public static WebDriver getCurrentDriver() {
 		return getInstance().getDriver();
 	}
+
+	public static String getWindowHandle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

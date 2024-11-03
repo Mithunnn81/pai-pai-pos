@@ -50,9 +50,6 @@ public class HireSaleWithoutBarPage extends CommonMethods{
     @FindBy(xpath = "//input[@id='cashReceived']")
     private WebElement paidAmount;
     
-    @FindBy(xpath = "//body/div[@id='_windowWrapper']/main[@id='main']/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[8]/div[4]/div[1]/button[1]")
-    private WebElement saveButton;
-    
     public void clickAndCapture(WebElement element, String elementName) throws IOException {
 		
 		try {
@@ -201,7 +198,7 @@ public class HireSaleWithoutBarPage extends CommonMethods{
         }
         
         clickAndCapture(refreshInstallment, "refreshInstallment");
-        //clickAndCapture(saveButton, "saveButton");
+        clickAndCapture(saveButton, "saveButton");
         
     }
 }
