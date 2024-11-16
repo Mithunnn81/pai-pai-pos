@@ -5,8 +5,6 @@ import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.it.digitech.drivers.PageDriver;
 import com.it.digitech.utilities.CommonMethods;
@@ -47,60 +45,29 @@ public class JournalVoucharPage extends CommonMethods{
     
     @FindBy(xpath = "//input[@id='creditAmount']")
     private WebElement creditAmount;
-public void clickAndCapture(WebElement element, String elementName) throws IOException {
-		
-		try {
-			 if (element.isDisplayed()) {
-	                element.click();
-	                timeout();
-	                capturePass(test, elementName);
-	            }
-	        } catch (Exception e) {
-	        	System.out.println(e.getMessage());
-	        	captureFail(test, elementName);
-	            Assert.assertTrue(element.isDisplayed());
-	            PageDriver.getCurrentDriver().quit();
-	        }
-		}
-    
-    public void typeAndCapture(WebElement element, String elementName, String key) throws IOException {
-    	
-		try {
-			 if (element.isDisplayed()) {
-				 
-	                element.sendKeys(key);
-	                timeout();
-	                capturePass(test, elementName);
-	            }
-	        } catch (Exception e) {
-	        	System.out.println(e.getMessage());
-	        	captureFail(test, elementName);
-	            Assert.assertTrue(element.isDisplayed());
-	            PageDriver.getCurrentDriver().quit();
-	        }
-    	
-    }
+
     
  public void journalVouchar() throws IOException {
-    	
-    	clickAndCapture(accounts, "accounts");    
-    	clickAndCapture(voucharPayment, "voucharPayment");
-        clickAndCapture(journalVouchar, "journalVouchar");
-        clickAndCapture(newButton, "newButton");
-        clickAndCapture(operatingUnit, "operatingUnit");
-        clickAndCapture(selectOperatingUnit, "selectOperatingUnit");
-        clickAndCapture(accountHead, "accountHead");
-        clickAndCapture(accountsHeadJournalVouchar, "accountsHeadJournalVouchar");
-        typeAndCapture(particulars, "particulars", "Automation Generated");
-        clickAndCapture(chooseCustomer, "chooseCustomer");
-        clickAndCapture(selectCustomer, "selectCustomer");
+    	System.out.println("baal");
+    	clickAndCapture(test, accounts, "accounts");    
+    	clickAndCapture(test, voucharPayment, "voucharPayment");
+        clickAndCapture(test, journalVouchar, "journalVouchar");
+        clickAndCapture(test, newButton, "newButton");
+        clickAndCapture(test, operatingUnit, "operatingUnit");
+        clickAndCapture(test, selectOperatingUnit, "selectOperatingUnit");
+        clickAndCapture(test, accountHead, "accountHead");
+        clickAndCapture(test, accountsHeadJournalVouchar, "accountsHeadJournalVouchar");
+        typeAndCapture(test, particulars, "particulars", "Automation Generated");
+        clickAndCapture(test, chooseCustomer, "chooseCustomer");
+        clickAndCapture(test, selectCustomer, "selectCustomer");
         
-        clickAndCapture(chooseSupplier, "chooseSupplier");
-        clickAndCapture(selectSupplier, "selectSupplier");
+        clickAndCapture(test, chooseSupplier, "chooseSupplier");
+        clickAndCapture(test, selectSupplier, "selectSupplier");
         
-        typeAndCapture(debitAmount, "debitAmount","100");
-        typeAndCapture(creditAmount, "creditAmount","100");
-        //clickAndCapture(saveButton, "saveButton");
+        typeAndCapture(test, debitAmount, "debitAmount","100");
+        typeAndCapture(test, creditAmount, "creditAmount","100");
+        clickAndCapture(test, saveButton, "saveButton");
+        clickAndCapture(test, confirmButton, "confirmButton");
     }
     
 }

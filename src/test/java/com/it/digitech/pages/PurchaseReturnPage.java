@@ -4,7 +4,6 @@ import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import com.aventstack.extentreports.ExtentTest;
 import com.it.digitech.drivers.PageDriver;
@@ -37,46 +36,17 @@ public class PurchaseReturnPage extends CommonMethods {
 	@FindBy(xpath = "//a[contains(text(),'PRTN-00001')]")
 	public WebElement matchCreation;
 
-
-    // Helper method to click and capture screenshots
-    private void clickAndCapture(WebElement element, String elementName) throws IOException {
-        try {
-            if (element.isDisplayed()) {
-                element.click();
-                timeout();
-                capturePass(test, elementName);
-            }
-        } catch (Exception e) {
-        	captureFail(test, elementName);
-            Assert.assertTrue(element.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-    }
-
     public void purchaseReturn() throws IOException {
-        clickAndCapture(purchase, "purchase");
-        clickAndCapture(purchaseReturnButton, "purchaseReturnButton");
-        clickAndCapture(newPurchaseReturn, "newPurchaseReturn");
-
-        try {
-            if (warehouse.isDisplayed()) {
-                new Select(warehouse).selectByIndex(2);
-                timeout();
-                capturePass(test, "warehouse");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "warehouse");
-            Assert.assertTrue(warehouse.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-
-        clickAndCapture(operatingUnit, "operatingUnit");
-        clickAndCapture(selectOperatingUnit, "selectOperatingUnit");
-        clickAndCapture(clickGrn, "clickGrn");
-        clickAndCapture(selectGrn, "selectGrn");
-        clickAndCapture(fetchGrn, "fetchGrn");
-        clickAndCapture(saveButton, "saveButton");
-        
+        clickAndCapture(test, purchase, "purchase");
+        clickAndCapture(test, purchaseReturnButton, "purchaseReturnButton");
+        clickAndCapture(test, newPurchaseReturn, "newPurchaseReturn");
+        selectFromDropdown(test, warehouse, "warehouse", 2);
+        clickAndCapture(test, operatingUnit, "operatingUnit");
+        clickAndCapture(test, selectOperatingUnit, "selectOperatingUnit");
+        clickAndCapture(test, clickGrn, "clickGrn");
+        clickAndCapture(test, selectGrn, "selectGrn");
+        clickAndCapture(test, fetchGrn, "fetchGrn");
+        clickAndCapture(test, saveButton, "saveButton");      
         PageDriver.getCurrentDriver().navigate().back();
         
         try {
@@ -89,9 +59,10 @@ public class PurchaseReturnPage extends CommonMethods {
         	captureFail(test, "matchCreation");
         	System.out.println("Not created, Try again");
             Assert.assertTrue(matchCreation.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
         }
         
+        clickAndCapture(test, saveButton, "saveButton");
+        clickAndCapture(test, confirmButton, "confirmButton");
         
     }
 }

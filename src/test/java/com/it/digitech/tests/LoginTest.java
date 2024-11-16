@@ -29,9 +29,9 @@ public class LoginTest extends CommonMethods{
 	
 	@Test
 	public void testLoginMethod() throws IOException {
-		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>Check For a successfull login</b></p>");
+		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>Check For a successful login</b></p>");
 		LoginPage loginPage = new LoginPage(childTest);
-		loginPage.login("mithun123", "1234");
+		loginPage.login();
 	}
 	
 	@AfterClass

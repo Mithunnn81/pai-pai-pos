@@ -3,15 +3,42 @@
 <suite name="Failed suite [Pai Pai POS]" guice-stage="DEVELOPMENT">
   <test name="Test(failed)">
     <classes>
-      <class name="com.it.digitech.tests.JournalVoucharTest">
+      <class name="com.it.digitech.tests.PartySaleWithoutBarTest">
         <methods>
           <include name="startBrowser"/>
-          <include name="testJournalVouchar"/>
           <include name="report"/>
-          <include name="close"/>
+          <include name="testPartySaleWoBarMethod"/>
           <include name="openUrl"/>
+          <include name="close"/>
         </methods>
-      </class> <!-- com.it.digitech.tests.JournalVoucharTest -->
+      </class> <!-- com.it.digitech.tests.PartySaleWithoutBarTest -->
+      <class name="com.it.digitech.tests.StockAdjustmentTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="openUrl"/>
+          <include name="testStockAdjustment"/>
+          <include name="close"/>
+          <include name="report"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.StockAdjustmentTest -->
+      <class name="com.it.digitech.tests.RetailSalesWithoutBarTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="openUrl"/>
+          <include name="close"/>
+          <include name="testRetailSaleWoBarMethod"/>
+          <include name="report"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.RetailSalesWithoutBarTest -->
+      <class name="com.it.digitech.tests.PurchaseReturnTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="testPurchaseReturnMethod"/>
+          <include name="openUrl"/>
+          <include name="close"/>
+          <include name="report"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.PurchaseReturnTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Pai Pai POS] -->

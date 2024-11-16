@@ -1,14 +1,9 @@
 package com.it.digitech.pages;
 
 import java.io.IOException;
-
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.it.digitech.drivers.PageDriver;
@@ -49,149 +44,24 @@ public class HireSalePage extends CommonMethods{
     @FindBy(xpath = "//input[@id='cashReceived']")
     private WebElement paidAmount;
     
-    public void clickAndCapture(WebElement element, String elementName) throws IOException {
-		
-		try {
-			 if (element.isDisplayed()) {
-	                element.click();
-	                timeout();
-	                capturePass(test, elementName);
-	            }
-	        } catch (Exception e) {
-	        	System.out.println(e.getMessage());
-	        	captureFail(test, elementName);
-	            Assert.assertTrue(element.isDisplayed());
-	            PageDriver.getCurrentDriver().quit();
-	        }
-		}
-    
-    public void typeAndCapture(WebElement element, String elementName, String key) throws IOException {
-    	
-		try {
-			 if (element.isDisplayed()) {
-				 
-	                element.sendKeys(key);
-	                timeout();
-	                capturePass(test, elementName);
-	            }
-	        } catch (Exception e) {
-	        	System.out.println(e.getMessage());
-	        	captureFail(test, elementName);
-	            Assert.assertTrue(element.isDisplayed());
-	            PageDriver.getCurrentDriver().quit();
-	        }
-    	
-    }
-    
     public void HireSale() throws IOException {
-        clickAndCapture(sales, "sales");
-        clickAndCapture(saleWithBar, "saleWithBar");
-        clickAndCapture(hireSaleWithBar, "hireSaleWithBar");
-        clickAndCapture(operatingUnit, "operatingUnit");
-        clickAndCapture(selectOperatingUnit, "selectOperatingUnit");
+        clickAndCapture(test, sales, "sales");
+        clickAndCapture(test, saleWithBar, "saleWithBar");
+        clickAndCapture(test, hireSaleWithBar, "hireSaleWithBar");
+        clickAndCapture(test, operatingUnit, "operatingUnit");
+        clickAndCapture(test, selectOperatingUnit, "selectOperatingUnit");
+        selectFromDropdown(test, warehouse, "warehouse", 1);
+        dropdownWithKeyboardArrow(test, customerName, "customerName", "hre");
+        typeAndCapture(test, reffererName, "reffererName", "Automation generated name");
         
-       
+        typeAndCapture(test, reffererNumber, "reffererNumber", "88776test");
+        typeAndCapture(test, barCode, "barCode", "XT3");
         
-        try {
-            if (warehouse.isDisplayed()) {
-                new Select(warehouse).selectByIndex(1);
-                timeout();
-                capturePass(test, "warehouse");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "warehouse");
-            Assert.assertTrue(warehouse.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        try {
-            if (customerName.isDisplayed()) {
-                customerName.sendKeys("hre");
-                customerName.click();
-                timeout();
-
-                Actions action = new Actions(PageDriver.getCurrentDriver());
-                action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
-                
-                timeout();
-
-                capturePass(test, "customerName");
-            }
-        } catch (Exception e) {
-            captureFail(test, "customerName");
-            Assert.assertTrue(customerName.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        try {
-            if (reffererName.isDisplayed()) {          	
-            	reffererName.sendKeys("Automation generated name");
-                timeout();
-                capturePass(test, "reffererName");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "reffererName");
-            Assert.assertTrue(reffererName.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-//        try {
-//            if (reffererNumber.isDisplayed()) {          	
-//            	reffererNumber.sendKeys("88776test");
-//                timeout();
-//                capturePass(test, "reffererNumber");
-//            }
-//        } catch (Exception e) {
-//        	captureFail(test, "reffererNumber");
-//            Assert.assertTrue(reffererNumber.isDisplayed());
-//            PageDriver.getCurrentDriver().quit();
-//        }
-        
-        typeAndCapture(reffererNumber, "reffererNumber", "88776test");
-        
-        try {
-            if (barCode.isDisplayed()) {
-            	barCode.sendKeys("XT3");
-                timeout();
-
-                capturePass(test, "barCode");
-            }
-        } catch (Exception e) {
-            captureFail(test, "barCode");
-            Assert.assertTrue(barCode.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-
-//        try {
-//            if (itemQty.isDisplayed()) {
-//            	itemQty.clear();
-//            	
-//            	itemQty.sendKeys("3");
-//                timeout();
-//                capturePass(test, "itemQty");
-//            }
-//        } catch (Exception e) {
-//        	captureFail(test, "itemQty");
-//            Assert.assertTrue(itemQty.isDisplayed());
-//            PageDriver.getCurrentDriver().quit();
-//        }
-        
-        clickAndCapture(refreshInstallment, "refreshInstallment");
-        
-        try {
-            if (paidAmount.isDisplayed()) {
-            	paidAmount.sendKeys("300");
-                timeout();
-                capturePass(test, "paidAmount");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "paidAmount");
-            Assert.assertTrue(paidAmount.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        clickAndCapture(refreshInstallment, "refreshInstallment");
-        clickAndCapture(saveButton, "saveButton");
+        clickAndCapture(test, refreshInstallment, "refreshInstallment");
+        typeAndCapture(test, paidAmount, "paidAmount", "300");      
+        clickAndCapture(test, refreshInstallment, "refreshInstallment");
+        clickAndCapture(test, saveButton, "saveButton");
+        clickAndCapture(test, confirmButton, "confirmButton");
         
     }
 }

@@ -28,9 +28,11 @@ public class PurchaseGrnCorpListTest extends CommonMethods {
 	
 	@Test
 	public void purchaseGrnCorpListMethod() throws IOException {
+	
 		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>Check for a successfull Purchase with GRN</b></p>");
 		PurchaseGrnCorpListPage purchaseGrnCorpListPage = new PurchaseGrnCorpListPage(childTest);
 		purchaseGrnCorpListPage.purchaseGrnCorpList();
+		
 	}
 	
 	@AfterClass

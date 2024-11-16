@@ -20,10 +20,11 @@ public class HireSaleTest extends CommonMethods{
 	
 	@BeforeClass
 	public void openUrl() throws InterruptedException {
-		PageDriver.getCurrentDriver().get(url);
-		timeout();
+			PageDriver.getCurrentDriver().get(url);
+			timeout();
 		report = ExtentFactory.getInstance();
-		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>Hire Sale Without Barcode</b></p>").assignAuthor("Mithun").assignDevice("Windows");
+		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>Hire Sale With Barcode</b></p>").assignAuthor("Mithun").assignDevice("Windows");
+		System.out.println("HireSaleTest open url call end");
 	}
 	
 	@Test
@@ -31,6 +32,7 @@ public class HireSaleTest extends CommonMethods{
 		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>Check for a successfull Hire sale</b></p>");
 		HireSalePage hireSalePage = new HireSalePage(childTest);
 		hireSalePage.HireSale();
+
 	}
 	
 	@AfterClass

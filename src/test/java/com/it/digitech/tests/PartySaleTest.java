@@ -20,8 +20,8 @@ public class PartySaleTest extends CommonMethods{
 	
 	@BeforeClass
 	public void openUrl() throws InterruptedException {
-		PageDriver.getCurrentDriver().get(url);
-		timeout();
+			PageDriver.getCurrentDriver().get(url);
+			timeout();
 		report = ExtentFactory.getInstance();
 		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>Party Sale</b></p>").assignAuthor("Mithun").assignDevice("Windows");
 	}

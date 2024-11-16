@@ -20,21 +20,26 @@ public class CreateItemTest extends CommonMethods{
 	
 	@BeforeClass
 	public void openUrl() throws InterruptedException {
+		
 		PageDriver.getCurrentDriver().get(url);
 		timeout();
 		report = ExtentFactory.getInstance();
 		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>Create Item Module</b></p>").assignAuthor("Mithun").assignDevice("Windows");
+		
 	}
 	
 	@Test
 	public void CreateItemMethod() throws IOException {
+		
 		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>Check for a successful Item creation</b></p>");
 		CreateItemPage createItemPage = new CreateItemPage(childTest);
 		createItemPage.CreateItem();
+		
 	}
 	
 	@AfterClass
 	public void report() {
+		
 		report.flush();
 	}
 }

@@ -5,9 +5,6 @@ import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.it.digitech.drivers.PageDriver;
 import com.it.digitech.utilities.CommonMethods;
@@ -82,114 +79,29 @@ public class CreateItemPage extends CommonMethods{
 	@FindBy (xpath= "//body[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[5]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/form[1]/div[9]/fieldset[1]/div[11]/div[1]/input[1]")
 	private WebElement salesPrice;
 	
-	private void clickAndCapture(WebElement element, String elementName) throws IOException {
-		  
-        try {
-            if (element.isDisplayed()) {
-                element.click();
-                timeout();
-                capturePass(test, elementName);
-            }
-        } catch (Exception e) {
-        	captureFail(test, elementName);
-            Assert.assertTrue(element.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-    }
-	
 	public void CreateItem() throws IOException {
 		
-		clickAndCapture(base, "base");
-        clickAndCapture(item, "item");
-        clickAndCapture(itemTwo, "itemTwo");
-        clickAndCapture(newForm, "newForm");
-        clickAndCapture(operatingUnitItem, "operatingUnitItem");
-        clickAndCapture(selectOperatingUnitItem, "selectOperatingUnitItem");
-        clickAndCapture(itemType, "itemType");
-        clickAndCapture(finidhedGoods, "finidhedGoods");
-        
-        try {
-            if (itemName.isDisplayed()) {
-            	itemName.sendKeys("Autimation Ganerated Item 1");
-                timeout();
-                capturePass(test, "itemName");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "itemName");
-            Assert.assertTrue(itemName.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        clickAndCapture(itemCatagory, "itemCatagory");
-        clickAndCapture(itemCatagorySelect, "itemCatagorySelect");
-        clickAndCapture(itemContorled, "itemContorled");
-        clickAndCapture(purchaseTab, "purchaseTab");
-        
-        try {
-            if (purchaseUoM.isDisplayed()) {
-                new Select(purchaseUoM).selectByIndex(24);
-                timeout();
-                capturePass(test, "purchaseUoM");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "purchaseUoM");
-            Assert.assertTrue(purchaseUoM.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        try {
-            if (purchasePrice.isDisplayed()) {
-            	purchasePrice.sendKeys("100");
-                timeout();
-                capturePass(test, "purchasePrice");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "purchasePrice");
-            Assert.assertTrue(purchasePrice.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        clickAndCapture(inventoryTab, "inventoryTab");
-        
-        try {
-            if (inventoryUom.isDisplayed()) {
-                new Select(inventoryUom).selectByIndex(24);
-                timeout();
-                capturePass(test, "inventoryUom");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "inventoryUom");
-            Assert.assertTrue(inventoryUom.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        clickAndCapture(saleTab, "saleTab");
-        
-        try {
-            if (salesUom.isDisplayed()) {
-                new Select(salesUom).selectByIndex(24);
-                timeout();
-                capturePass(test, "salesUom");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "salesUom");
-            Assert.assertTrue(salesUom.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        try {
-            if (salesPrice.isDisplayed()) {
-            	salesPrice.sendKeys("200");
-                timeout();
-                capturePass(test, "salesPrice");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "salesPrice");
-            Assert.assertTrue(salesPrice.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        clickAndCapture(saveButton, "saveButton");
+		clickAndCapture(test, base, "base");
+        clickAndCapture(test, item, "item");
+        clickAndCapture(test, itemTwo, "itemTwo");
+        clickAndCapture(test, newForm, "newForm");
+        clickAndCapture(test, operatingUnitItem, "operatingUnitItem");
+        clickAndCapture(test, selectOperatingUnitItem, "selectOperatingUnitItem");
+        clickAndCapture(test, itemType, "itemType");
+        clickAndCapture(test, finidhedGoods, "finidhedGoods");
+        typeAndCapture (test, itemName, "itemName", "Automation Generated it3m" );      
+        clickAndCapture(test, itemCatagory, "itemCatagory");
+        clickAndCapture(test, itemCatagorySelect, "itemCatagorySelect");
+        clickAndCapture(test, itemContorled, "itemContorled");
+        clickAndCapture(test, purchaseTab, "purchaseTab");
+        selectFromDropdown(test, purchaseUoM, "purchaseUoM", 24);
+        typeAndCapture (test, purchasePrice, "purchasePrice", "100" );        
+        clickAndCapture(test, inventoryTab, "inventoryTab");
+        selectFromDropdown (test, inventoryUom, "inventoryUom", 24 );
+        clickAndCapture(test, saleTab, "saleTab");
+        selectFromDropdown(test, salesUom, "salesUom", 24);
+        typeAndCapture (test, salesPrice, "salesPrice", "500" );   
+        clickAndCapture(test, saveButton, "saveButton");
 	}
 	
 	

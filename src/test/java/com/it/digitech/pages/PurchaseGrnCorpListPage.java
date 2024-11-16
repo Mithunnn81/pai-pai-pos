@@ -4,8 +4,6 @@ import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import com.aventstack.extentreports.ExtentTest;
 import com.it.digitech.drivers.PageDriver;
 import com.it.digitech.utilities.CommonMethods;
@@ -43,60 +41,21 @@ public class PurchaseGrnCorpListPage extends CommonMethods {
     @FindBy(xpath = "//input[@id='receivedQuantity']")
     private WebElement quantity; 
 
-    // Helper method to click and capture screenshots
-    private void clickAndCapture(WebElement element, String elementName) throws IOException {
-  
-        try {
-            if (element.isDisplayed()) {
-                element.click();
-                timeout();
-                capturePass(test, elementName);
-            }
-        } catch (Exception e) {
-        	captureFail(test, elementName);
-            Assert.assertTrue(element.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-    }
-
     public void purchaseGrnCorpList() throws IOException {
-        clickAndCapture(purchase, "purchase");
-        clickAndCapture(createGrn, "createGrn");
-        clickAndCapture(grnCorpList, "grnCorpList");
-        clickAndCapture(newGrn, "newGrn");
-        clickAndCapture(operatingUnit, "operatingUnit");
-        clickAndCapture(selectOperatingUnit, "selectOperatingUnit");
-        clickAndCapture(selectSupplier, "selectSupplier");
-        clickAndCapture(clickSupplier, "clickSupplier");
-        
-        try {
-            if (warehouse.isDisplayed()) {
-                new Select(warehouse).selectByIndex(2);
-                timeout();
-                capturePass(test, "warehouse");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "warehouse");
-            Assert.assertTrue(warehouse.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        clickAndCapture(chooseItem, "chooseItem");
-        clickAndCapture(selectItem, "selectItem");
-        
-        try {
-            if (quantity.isDisplayed()) {
-            	quantity.sendKeys("5");
-                timeout();
-                capturePass(test, "quantity");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "quantity");
-            Assert.assertTrue(quantity.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        clickAndCapture(saveButton, "saveButton");
+        clickAndCapture(test, purchase, "purchase");
+        clickAndCapture(test, createGrn, "createGrn");
+        clickAndCapture(test, grnCorpList, "grnCorpList");
+        clickAndCapture(test, newGrn, "newGrn");
+        clickAndCapture(test, operatingUnit, "operatingUnit");
+        clickAndCapture(test, selectOperatingUnit, "selectOperatingUnit");
+        clickAndCapture(test, selectSupplier, "selectSupplier");
+        clickAndCapture(test, clickSupplier, "clickSupplier");
+        selectFromDropdown(test, warehouse, "warehouse", 2);
+        clickAndCapture(test, chooseItem, "chooseItem");
+        clickAndCapture(test, selectItem, "selectItem");    
+        typeAndCapture(test, quantity, "quantity", "5");
+        clickAndCapture(test, saveButton, "saveButton");
+        clickAndCapture(test, confirmButton, "confirmButton");
 
     }
 }

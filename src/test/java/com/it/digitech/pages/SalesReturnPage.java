@@ -5,8 +5,6 @@ import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.it.digitech.drivers.PageDriver;
 import com.it.digitech.utilities.CommonMethods;
@@ -33,28 +31,14 @@ public class SalesReturnPage extends CommonMethods{
 	@FindBy(xpath = "//a[contains(text(),'Fetch')]")
 	public WebElement fetchInvoice;
 
-    // Helper method to click and capture screenshots
-    private void clickAndCapture(WebElement element, String elementName) throws IOException {
-        try {
-            if (element.isDisplayed()) {
-                element.click();
-                timeout();
-                capturePass(test, elementName);
-            }
-        } catch (Exception e) {
-        	captureFail(test, elementName);
-            Assert.assertTrue(element.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-    }
-
     public void salesReturn() throws IOException {
-        clickAndCapture(sales, "sales");
-        clickAndCapture(salesReturnButton, "salesReturnButton");
-        clickAndCapture(clickInvoiceNo, "clickInvoiceNo");
-        clickAndCapture(selectinvoice, "selectinvoice");
-        clickAndCapture(fetchInvoice, "fetchInvoice");
-        clickAndCapture(saveButton, "saveButton");
+        clickAndCapture(test, sales, "sales");
+        clickAndCapture(test, salesReturnButton, "salesReturnButton");
+        clickAndCapture(test, clickInvoiceNo, "clickInvoiceNo");
+        clickAndCapture(test, selectinvoice, "selectinvoice");
+        clickAndCapture(test, fetchInvoice, "fetchInvoice");
+        clickAndCapture(test, saveButton, "saveButton");
+        clickAndCapture(test, confirmButton, "confirmButton");
 
     }
 }

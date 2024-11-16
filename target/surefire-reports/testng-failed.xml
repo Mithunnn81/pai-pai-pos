@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="5" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="com.it.digitech.tests.HireSaleTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="close"/>
+          <include name="report"/>
+          <include name="openUrl"/>
+          <include name="testHireSaleWoBarMethod"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.HireSaleTest -->
+      <class name="com.it.digitech.tests.PurchaseReturnTest">
+        <methods>
+          <include name="report"/>
+          <include name="close"/>
+          <include name="startBrowser"/>
+          <include name="testPurchaseReturnMethod"/>
+          <include name="openUrl"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.PurchaseReturnTest -->
+      <class name="com.it.digitech.tests.PartySaleWithoutBarTest">
+        <methods>
+          <include name="close"/>
+          <include name="report"/>
+          <include name="startBrowser"/>
+          <include name="testPartySaleWoBarMethod"/>
+          <include name="openUrl"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.PartySaleWithoutBarTest -->
+      <class name="com.it.digitech.tests.RetailSalesWithoutBarTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="close"/>
+          <include name="openUrl"/>
+          <include name="report"/>
+          <include name="testRetailSaleWoBarMethod"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.RetailSalesWithoutBarTest -->
+      <class name="com.it.digitech.tests.RetailSaleTest">
+        <methods>
+          <include name="testRetailSale"/>
+          <include name="close"/>
+          <include name="startBrowser"/>
+          <include name="report"/>
+          <include name="openUrl"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.RetailSaleTest -->
+      <class name="com.it.digitech.tests.CreateItemTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="close"/>
+          <include name="openUrl"/>
+          <include name="report"/>
+          <include name="CreateItemMethod"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.CreateItemTest -->
+      <class name="com.it.digitech.tests.ReceiveVoucharTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="close"/>
+          <include name="openUrl"/>
+          <include name="testReceiveVouchar"/>
+          <include name="report"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.ReceiveVoucharTest -->
+      <class name="com.it.digitech.tests.SalesReturnTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="close"/>
+          <include name="report"/>
+          <include name="testSalesReturnMethod"/>
+          <include name="openUrl"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.SalesReturnTest -->
+      <class name="com.it.digitech.tests.PartySaleTest">
+        <methods>
+          <include name="close"/>
+          <include name="startBrowser"/>
+          <include name="report"/>
+          <include name="testPartySaleWoBarMethod"/>
+          <include name="openUrl"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.PartySaleTest -->
+      <class name="com.it.digitech.tests.HireSaleWithoutBarTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="close"/>
+          <include name="report"/>
+          <include name="testHireSaleWoBarMethod"/>
+          <include name="openUrl"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.HireSaleWithoutBarTest -->
+      <class name="com.it.digitech.tests.PurchaseGrnCorpListTest">
+        <methods>
+          <include name="close"/>
+          <include name="startBrowser"/>
+          <include name="purchaseGrnCorpListMethod"/>
+          <include name="report"/>
+          <include name="openUrl"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.PurchaseGrnCorpListTest -->
+      <class name="com.it.digitech.tests.JournalVoucharTest">
+        <methods>
+          <include name="openUrl"/>
+          <include name="close"/>
+          <include name="startBrowser"/>
+          <include name="report"/>
+          <include name="testJournalVouchar"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.JournalVoucharTest -->
+      <class name="com.it.digitech.tests.SupplierPaymentTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="close"/>
+          <include name="openUrl"/>
+          <include name="report"/>
+          <include name="testSupplierPaymentMethod"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.SupplierPaymentTest -->
+      <class name="com.it.digitech.tests.PaymentVoucharTest">
+        <methods>
+          <include name="startBrowser"/>
+          <include name="close"/>
+          <include name="openUrl"/>
+          <include name="testPaymmentVouchar"/>
+          <include name="report"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.PaymentVoucharTest -->
+      <class name="com.it.digitech.tests.StockAdjustmentTest">
+        <methods>
+          <include name="close"/>
+          <include name="startBrowser"/>
+          <include name="openUrl"/>
+          <include name="testStockAdjustment"/>
+          <include name="report"/>
+        </methods>
+      </class> <!-- com.it.digitech.tests.StockAdjustmentTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

@@ -2,14 +2,9 @@ package com.it.digitech.pages;
 
 import java.io.IOException;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.it.digitech.drivers.PageDriver;
 import com.it.digitech.utilities.CommonMethods;
@@ -39,120 +34,19 @@ public class PartySaleWithoutBarPage extends CommonMethods{
     
     @FindBy(xpath = "//input[@id='orderCashQuantity']")
     private WebElement cashRcv;
-    
-    public void clickAndCapture(WebElement element, String elementName) throws IOException {
-		
-		try {
-			 if (element.isDisplayed()) {
-	                element.click();
-	                timeout();
-	                capturePass(test, elementName);
-	            }
-	        } catch (Exception e) {
-	        	System.out.println(e.getMessage());
-	        	captureFail(test, elementName);
-	            Assert.assertTrue(element.isDisplayed());
-	            PageDriver.getCurrentDriver().quit();
-	        }
-		}
+
     public void PartySaleWithoutBar() throws IOException {
-        clickAndCapture(sales, "sales");
-        clickAndCapture(saleWithoutBar, "saleWithoutBar");
-        clickAndCapture(partySaleWob, "partySaleWob");
-        clickAndCapture(operatingUnit, "operatingUnit");
-
-        try {
-            if (operatingUnit.isDisplayed()) {
-                new Select(operatingUnit).selectByIndex(1);
-                timeout();
-                capturePass(test, "operatingUnit");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "operatingUnit");
-            Assert.assertTrue(operatingUnit.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        try {
-            if (warehouse.isDisplayed()) {
-                new Select(warehouse).selectByIndex(1);
-                timeout();
-                capturePass(test, "warehouse");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "warehouse");
-            Assert.assertTrue(warehouse.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        try {
-            if (customerAccount.isDisplayed()) {
-            	customerAccount.sendKeys("pty");
-            	customerAccount.click();
-                timeout();
-
-                Actions action = new Actions(PageDriver.getCurrentDriver());
-                action.sendKeys(Keys.ENTER).perform();
-                
-                timeout();
-
-                capturePass(test, "customerAccount");
-            }
-        } catch (Exception e) {
-            captureFail(test, "customerAccount");
-            Assert.assertTrue(customerAccount.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-
-        
-        try {
-            if (itemNameEnter.isDisplayed()) {
-                itemNameEnter.sendKeys("item");
-                timeout();
-
-                Actions action = new Actions(PageDriver.getCurrentDriver());
-                action.moveToElement(itemNameEnter).perform();
-                action.sendKeys(Keys.ARROW_DOWN).perform();
-                action.sendKeys(Keys.ENTER).perform();
-                timeout();
-
-                capturePass(test, "itemNameEnter");
-            }
-        } catch (Exception e) {
-            captureFail(test, "itemNameEnter");
-            Assert.assertTrue(itemNameEnter.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-
-        try {
-            if (itemQty.isDisplayed()) {
-            	itemQty.clear();
-            	
-            	itemQty.sendKeys("2");
-                timeout();
-                capturePass(test, "itemQty");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "itemQty");
-            Assert.assertTrue(itemQty.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        try {
-            if (cashRcv.isDisplayed()) {
-            	cashRcv.clear();
-            	
-            	cashRcv.sendKeys("2000");
-                timeout();
-                capturePass(test, "cashRcv");
-            }
-        } catch (Exception e) {
-        	captureFail(test, "cashRcv");
-            Assert.assertTrue(cashRcv.isDisplayed());
-            PageDriver.getCurrentDriver().quit();
-        }
-        
-        clickAndCapture(saveButton, "saveButton");
+        clickAndCapture(test, sales, "sales");
+        clickAndCapture(test, saleWithoutBar, "saleWithoutBar");
+        clickAndCapture(test, partySaleWob, "partySaleWob");
+        selectFromDropdown(test, operatingUnit, "operatingUnit", 1);
+        selectFromDropdown(test, warehouse, "warehouse", 1);
+        dropdownWithKeyboardArrow(test, customerAccount, "customerAccount", "pty");
+        dropdownWithKeyboardArrow(test, itemNameEnter, "itemNameEnter", "item");
+        typeAndCapture(test, itemQty, "itemQty", "2");
+        typeAndCapture(test, cashRcv, "cashRcv", "2000");
+        clickAndCapture(test, saveButton, "saveButton");
+        clickAndCapture(test, confirmButton, "confirmButton");
     }
 }
 

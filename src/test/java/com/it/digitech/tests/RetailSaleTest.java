@@ -21,14 +21,18 @@ public class RetailSaleTest extends CommonMethods{
 	
 	@BeforeClass
 	public void openUrl() throws InterruptedException {
-		PageDriver.getCurrentDriver().get(url);
-		timeout();
+		
+			PageDriver.getCurrentDriver().get(url);
+			timeout();
+		
 		report = ExtentFactory.getInstance();
 		parentTest = report.createTest("<p style=\"color:#FF6000; font-size:20px\"><b>Retail Sale With Barcode</b></p>").assignAuthor("Mithun").assignDevice("Windows");
+		System.out.println("RetailSaleTest open url call end");
 	}
 	
 	@Test
 	public void testRetailSale() throws IOException {
+		
 		childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>Check for a successfull Retail sale</b></p>");
 		RetailSalePage retailSalePage = new RetailSalePage(childTest);
 		retailSalePage.RetailSales();

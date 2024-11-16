@@ -5,8 +5,6 @@ import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-
 import com.aventstack.extentreports.ExtentTest;
 import com.it.digitech.drivers.PageDriver;
 import com.it.digitech.utilities.CommonMethods;
@@ -37,56 +35,22 @@ public class SupplierPaymentPage extends CommonMethods{
     
     @FindBy(xpath = "//input[@id='paymentAmount']")
     private WebElement amount;
-    
-public void clickAndCapture(WebElement element, String elementName) throws IOException {
-		
-		try {
-			 if (element.isDisplayed()) {
-	                element.click();
-	                timeout();
-	                capturePass(test, elementName);
-	            }
-	        } catch (Exception e) {
-	        	System.out.println(e.getMessage());
-	        	captureFail(test, elementName);
-	            Assert.assertTrue(element.isDisplayed());
-	            PageDriver.getCurrentDriver().quit();
-	        }
-		}
-    
-    public void typeAndCapture(WebElement element, String elementName, String key) throws IOException {
-    	
-		try {
-			 if (element.isDisplayed()) {
-				 
-	                element.sendKeys(key);
-	                timeout();
-	                capturePass(test, elementName);
-	            }
-	        } catch (Exception e) {
-	        	System.out.println(e.getMessage());
-	        	captureFail(test, elementName);
-	            Assert.assertTrue(element.isDisplayed());
-	            PageDriver.getCurrentDriver().quit();
-	        }
-    	
-    }
-    
+
     public void SupplierPayment() throws IOException {
     	
-    	clickAndCapture(accounts, "accounts");
-        clickAndCapture(supplierPayment, "supplierPayment");
-        clickAndCapture(newForm, "newForm");
-        clickAndCapture(operatingUnit, "operatingUnit");
-        clickAndCapture(selectOperatingUnit, "selectOperatingUnit");
-        clickAndCapture(supplier, "supplier");
-        clickAndCapture(selectSupplier, "selectSupplier");
-        clickAndCapture(paymentMethod, "paymentMethod");
-        clickAndCapture(cash, "cash");
+    	clickAndCapture(test, accounts, "accounts");
+        clickAndCapture(test, supplierPayment, "supplierPayment");
+        clickAndCapture(test, newForm, "newForm");
+        clickAndCapture(test, operatingUnit, "operatingUnit");
+        clickAndCapture(test, selectOperatingUnit, "selectOperatingUnit");
+        clickAndCapture(test, supplier, "supplier");
+        clickAndCapture(test, selectSupplier, "selectSupplier");
+        clickAndCapture(test, paymentMethod, "paymentMethod");
+        clickAndCapture(test, cash, "cash");
+        typeAndCapture(test, amount, "amount","1000");    
+        clickAndCapture(test, saveButton, "saveButton");
+        clickAndCapture(test, confirmButton, "confirmButton");
         
-        typeAndCapture(amount, "amount","1000");
-        
-        clickAndCapture(saveButton, "saveButton");
     }
 
 }
