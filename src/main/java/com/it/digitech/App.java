@@ -1,4 +1,4 @@
-package com.ebrahim.qa;
+package com.it.digitech;
 
 import com.github.javafaker.Faker;
 
