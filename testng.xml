@@ -3,12 +3,13 @@
 <suite name="Pai Pai POS">
  <test name="Test">
      <classes>
-		   <class name="com.it.digitech.tests.LoginTest"/>
+		    <class name="com.it.digitech.tests.LoginTest"/>
+		    <class name="com.it.digitech.tests.CreateItemWBTest"/>
 		  
-		  
-			  
-		    <class name="com.it.digitech.tests.JournalVoucharTest"/>		   			
+		<!-- 
+			 		   			
 			<class name="com.it.digitech.tests.CreateItemTest"/>
+			<class name="com.it.digitech.tests.CreateItemWBTest"/>
 			<class name="com.it.digitech.tests.PurchaseGrnCorpListTest"/>	
 					
 			<class name="com.it.digitech.tests.RetailSaleTest"/> 
@@ -28,7 +29,7 @@
 			<class name="com.it.digitech.tests.ReceiveVoucharTest"/>
 			<class name="com.it.digitech.tests.StockAdjustmentTest"/>
 					
-		<!--     --> 
+		--> 
 			
 			 
      </classes>

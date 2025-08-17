@@ -89,7 +89,7 @@ public class CreateItemPage extends CommonMethods{
         clickAndCapture(test, selectOperatingUnitItem, "selectOperatingUnitItem");
         clickAndCapture(test, itemType, "itemType");
         clickAndCapture(test, finidhedGoods, "finidhedGoods");
-        typeAndCapture (test, itemName, "itemName", "Automation Generated it3m" );      
+        typeAndCapture (test, itemName, "itemName", "version2" );      
         clickAndCapture(test, itemCatagory, "itemCatagory");
         clickAndCapture(test, itemCatagorySelect, "itemCatagorySelect");
         clickAndCapture(test, itemContorled, "itemContorled");

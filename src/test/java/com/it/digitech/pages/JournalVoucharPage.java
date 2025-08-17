@@ -48,7 +48,6 @@ public class JournalVoucharPage extends CommonMethods{
 
     
  public void journalVouchar() throws IOException {
-    	System.out.println("baal");
     	clickAndCapture(test, accounts, "accounts");    
     	clickAndCapture(test, voucharPayment, "voucharPayment");
         clickAndCapture(test, journalVouchar, "journalVouchar");

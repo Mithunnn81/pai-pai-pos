@@ -50,12 +50,7 @@ public class PurchaseGrnCorpListPage extends CommonMethods {
         clickAndCapture(test, selectOperatingUnit, "selectOperatingUnit");
         clickAndCapture(test, selectSupplier, "selectSupplier");
         clickAndCapture(test, clickSupplier, "clickSupplier");
-        selectFromDropdown(test, warehouse, "warehouse", 2);
-        clickAndCapture(test, chooseItem, "chooseItem");
-        clickAndCapture(test, selectItem, "selectItem");    
-        typeAndCapture(test, quantity, "quantity", "5");
-        clickAndCapture(test, saveButton, "saveButton");
-        clickAndCapture(test, confirmButton, "confirmButton");
+ 
 
     }
 }

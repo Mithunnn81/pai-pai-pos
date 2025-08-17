@@ -16,20 +16,20 @@ public class LoginPage extends CommonMethods{
 
 	ExtentTest test;
 
-	ExcelUtils excelUtils = new ExcelUtils();
+//	ExcelUtils excelUtils = new ExcelUtils();
 
 	public LoginPage(ExtentTest test) {
 		PageFactory.initElements(PageDriver.getCurrentDriver(), this);
 		this.test = test;
 	}
 	
-		@FindBys({ @FindBy(xpath = "//input[@id='username']") })
+		@FindBys({ @FindBy(xpath = "//input[@placeholder='Username']") })
 		WebElement userName;
 	
-		@FindBys({ @FindBy(xpath = "//input[@id='password']") })
+		@FindBys({ @FindBy(xpath = "//input[@id='id_password']") })
 		WebElement passWord;
 	
-		@FindBys({ @FindBy(xpath = "//button[@id='button']") })
+		@FindBys({ @FindBy(xpath = "//button[normalize-space()='Sign In']") })
 		WebElement submit;
 			
 		public void login() throws IOException {

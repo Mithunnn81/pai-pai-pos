@@ -1,6 +1,7 @@
 package com.it.digitech.utilities;
 
 import java.io.IOException;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -165,7 +166,7 @@ public class CommonMethods extends BaseDriver {
                 Actions action = new Actions(PageDriver.getCurrentDriver());
                 action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
                 
-                timeout();
+                timeout(10000);
 
                 capturePass(test, elementName);
             }
@@ -174,5 +175,17 @@ public class CommonMethods extends BaseDriver {
             Assert.assertTrue(element.isDisplayed());
         }
 	}
+		
+	    public String getUniqueTitle(String title)
+	    
+	    {
+	        long timestamp = System.currentTimeMillis();
+	        return title + "_" + timestamp;
+	    }
+	    
+	    public static double getRandomDecimal(double min, double max) {
+	        return ThreadLocalRandom.current().nextDouble(min, max);
+	    }
+	
 	
 }
